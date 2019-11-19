@@ -9,7 +9,7 @@ const TEMPLATE_PARAMS = {
 };
 
 module.exports = {
-  publicPath: "pattern-generator/dist/",
+  publicPath: "share-url-generator/dist/",
   css: {
     loaderOptions: {
       sass: {
@@ -33,7 +33,7 @@ module.exports = {
     });
   },
   devServer: {
-    contentBase: path.join(__dirname, "pattern-generator/dist/"),
+    contentBase: path.join(__dirname, "share-url-generator/dist/"),
     port: 3000
   }
 };
