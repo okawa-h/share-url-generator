@@ -1,0 +1,10 @@
+{
+  "SITE_ORIGIN": "https://okawa-h.github.io/",
+  "BASE_PATH": "/share-url-generator/",
+  "META": {
+    "TITLE": "Share URL Generator",
+    "DESCRIPTION": "Share URL Generator.",
+    "KEYWORDS": "html,css,share,SNS,generator",
+    "SHARE_IMAGE_PATH": "ogp.png"
+  }
+}
