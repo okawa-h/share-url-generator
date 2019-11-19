@@ -1,12 +1,12 @@
-# Pattern Generator
+# Share URL Generator
 
 Web application.
 
 ## Description
 
-Easy image generator.
-You can convert Base64 or download PNG data.
+SNS Share URL generator,
+for Twitter, facebook, LINE
 
 ## Demo
 
-![thumnail](https://raw.githubusercontent.com/okawa-h/pattern-generator/master/src/assets/thumnail.png "thumnail")
+![thumnail](https://raw.githubusercontent.com/okawa-h/share-url-generator/master/src/assets/thumnail.png "thumnail")
