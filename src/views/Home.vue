@@ -12,7 +12,7 @@
           input(type="text" v-model="input.via" @change="onChange")
         .input-item
           label Text #[small (for Twitter)]
-          input(type="text" v-model="input.text" @change="onChange")
+          textarea(rows="5" v-model="input.text" @change="onChange")
         .input-item
           label Related #[small (for Twitter)]
           input(type="text" v-model="input.related" @change="onChange")
@@ -119,12 +119,13 @@ export default {
 #input {
   .input-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     + .input-item {
       margin-top: 10px;
     }
     label {
       width: 150px;
+      padding-top: 5px;
       font-size: 14px;
       small {
         display: block;
@@ -132,6 +133,7 @@ export default {
         font-size: 0.6em;
       }
     }
+    textarea,
     input {
       flex-grow: 1;
       padding: 0.4em 0.5em;
