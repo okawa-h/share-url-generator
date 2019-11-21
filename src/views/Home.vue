@@ -22,18 +22,12 @@
       section.section#result
         h2.subtitle Result
         ul.link-list
-          li.twitter
-            label Twitter
-            input(type="text" :value="encodeData.twitter")
-            button(@click="witeToClipboard") Copy
-          li.facebook
-            label facebook
-            input(type="text" :value="encodeData.facebook")
-            button(@click="witeToClipboard") Copy
-          li.line
-            label LINE
-            input(type="text" :value="encodeData.line")
-            button(@click="witeToClipboard") Copy
+          li(v-for="(value, name) in shareList" :class="name")
+            label {{ value }}
+            input(type="text" :value="encodeData[name]" @click="onClickInput")
+            template(v-if="encodeData[name]")
+              a(:href="encodeData[name]" target="_blank" rel="noopener") Link
+              button(@click="witeToClipboard") Copy
 </template>
 
 <script>
@@ -56,8 +50,9 @@ export default {
     };
   },
   computed: {
-    frameSize: () => 780,
-    maxLength: () => 30
+    shareList: () => {
+      return { twitter: "Twitter", facebook: "facebook", line: "LINE" };
+    }
   },
   methods: {
     onChange() {
@@ -65,6 +60,9 @@ export default {
       this.setEncodeTwitter(url);
       this.setEncodeFacebook(url);
       this.setEncodeLINE(url);
+    },
+    onClickInput(event) {
+      event.target.select();
     },
     witeToClipboard(event) {
       const text = event.target.previousElementSibling.value;
@@ -170,8 +168,14 @@ export default {
           border-color: #000;
         }
       }
+      a {
+        margin-left: 15px;
+        color: #000;
+        font-size: 12px;
+      }
       button {
         margin-left: 15px;
+        color: #000;
       }
       &.facebook {
         color: #1877f2;
