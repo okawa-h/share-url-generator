@@ -65,7 +65,7 @@ export default {
       event.target.select();
     },
     witeToClipboard(event) {
-      const text = event.target.previousElementSibling.value;
+      const text = event.target.previousElementSibling.previousElementSibling.value;
       navigator.clipboard
         .writeText(text)
         .then(() => alert("Copy"))
